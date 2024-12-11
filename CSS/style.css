@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'constantia';
+    src: url(fonts\constantia\constan.ttf);
+}
+
+@font-face {
+    font-family: 'FrankRuhlLibre';
+    src: url(fonts\frank\FrankRuhlLibre-Medium.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: n;
+}
+
+/* coloration du header et footer */
+header {
+
+    color: white;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    background: linear-gradient(0deg, rgba(42, 120, 94, 1) 0%, rgba(1, 54, 44, 1) 60%);
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    text-align: center;
+    color: aliceblue;
+    background-color: #2a785e;
+    padding: 40px 0;
+    margin-top: 50px;
+    top: 0;
+
+}
+
+/* Header */
+h1 {
+    text-align: left;
+    margin-left: 40px;
+    font-size: 30px;
+    color: white;
+    display: inline-flex;
+    float: left;
+    font-family: 'constantia';
+    text-transform: uppercase;
+}
+
+.right {
+    display: block;
+}
+
+
+
+
+
+.right p {
+    text-align: end;
+    margin-bottom: 20px;
+    margin-right: 60px;
+}
+
+.right p:hover {
+    text-decoration: underline;
+}
+
+.searchBar {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-right: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.searchBar input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+
+.searchBar i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #2a785e;
+}
+
+
+
+/* BODY */
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    color: rgba(1, 54, 44, 1);
+    text-transform: uppercase;
+    font-family: 'FrankRuhlLibre';
+}
+
+.userSection1 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.userSection3 {
+    min-height: 100vh;
+}
+
+.postInfo {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    padding: 40px;
+    border: solid 2px rgba(42, 120, 94, 1);
+    display: grid;
+    grid-row: 30% 30% 30%;
+    max-width: 100%;
+
+}
+
+.postTitre,
+.postBody,
+.postName {
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.postTitre:hover,
+.postBody:hover,
+.postName:hover {
+    text-decoration: underline;
+}
+
+.bouton {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.monBouton {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    border: solid 2px rgba(42, 120, 94, 1);
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.monBouton:hover {
+    background-color: rgba(42, 120, 94, 1);
+    color: white;
+}
+
+/* 
+FOOTER */
+
+footer a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
