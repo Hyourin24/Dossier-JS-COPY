@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'constantia';
+    src: url(fonts\constantia\constan.ttf);
+}
+
+@font-face {
+    font-family: 'FrankRuhlLibre';
+    src: url(fonts\frank\FrankRuhlLibre-Medium.ttf);
+}
+
+
+body {
+    background-color: azure;
+}
+
+
+header {
+    color: white;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    background: linear-gradient(0deg, rgba(42, 120, 94, 1) 0%, rgba(1, 54, 44, 1) 60%);
+    display: flex;
+    justify-content: space-between;
+    margin: -3%;
+}
+
+h1 {
+    text-align: left;
+    margin-left: 50px;
+    font-size: 25px;
+    color: white;
+    display: inline-flex;
+    float: left;
+    font-family: 'constantia';
+    text-transform: uppercase;
+}
+
+
+h3 {
+    text-align: center;
+    margin-top: 18%;
+    color: rgba(1, 54, 44, 1);
+    font-family: 'FrankRuhlLibre';
+
+}
+
+h3:hover {
+    text-decoration: linear-gradient(0deg, rgba(42, 120, 94, 1) 0%, rgba(1, 54, 44, 1) 60%);
+}
+
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: -12%;
+    color: rgba(1, 54, 44, 1);
+    text-transform: uppercase;
+    font-family: 'FrankRuhlLibre';
+
+}
+
+
+p {
+    margin-left: 100px;
+    margin-right: 100px;
+    border: solid 2px rgba(42, 120, 94, 1);
+    display: flex grid;
+    grid-row: 30% 30% 30%;
+    padding: 3%;
+    margin-bottom: -10%;
+}
+
+p:hover {
+    background-color: cadetblue;
+}
+
+
+hr {
+    color: darkgreen;
+    display: none;
+}
+
+
+footer {
+    text-align: center;
+    color: aliceblue;
+    background: linear-gradient(0deg, rgba(42, 120, 94, 1) 0%, rgba(1, 54, 44, 1) 60%);
+    padding: 30px 0;
+    margin-top: 20%;
+    margin-bottom: -4%;
+    margin-left: -3%;
+}
+
+
+.searchConnexion {
+    display: block;
+}
+
+.searchConnexion p {
+    text-align: end;
+    margin-bottom: 8px;
+    margin-right: 55px;
+}
+
+
+
+.searchConnexion p:hover {
+    text-decoration: underline;
+}
+
+
+.mySearch {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-right: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mySearch input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+
+.mySearch i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #2a785e;
+}
