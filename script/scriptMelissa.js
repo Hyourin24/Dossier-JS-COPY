@@ -47,11 +47,8 @@ async function AfficherPost() {
                 document.querySelector('#delete-request .status');
                 fetch('https://jsonplaceholder.typicode.com/comments',
                     { method: 'DELETE' })
-                    .then(() => deleteButton.remove(postDiv));
+                    .then(() => postDiv.remove(deleteButton));
             });
-
-
-
 
 
         });
