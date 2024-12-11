@@ -1,12 +1,4 @@
-@font-face {
-    font-family: 'constantia';
-    src: url(fonts\constantia\constan.ttf);
-}
 
-@font-face {
-    font-family: 'FrankRuhlLibre';
-    src: url(fonts\frank\FrankRuhlLibre-Medium.ttf);
-}
 
 * {
     margin: 0;
@@ -129,16 +121,11 @@ h2 {
 .postBody,
 .postName {
     margin-bottom: 20px;
-    cursor: pointer;
     text-decoration: none;
     color: black;
 }
 
-.postTitre:hover,
-.postBody:hover,
-.postName:hover {
-    text-decoration: underline;
-}
+
 
 .bouton {
     display: flex;
@@ -153,23 +140,39 @@ h2 {
     padding-bottom: 10px;
     margin-top: 40px;
     border: solid 2px rgba(42, 120, 94, 1);
-    background-color: white;
+    background-color: rgba(42, 120, 94, 1);
+    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
 }
 
 .monBouton:hover {
-    background-color: rgba(42, 120, 94, 1);
-    color: white;
+    background-color: white;
+    color: rgba(42, 120, 94, 1);
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* 
 FOOTER */
 
-footer a {
-    color: aliceblue;
-    text-decoration: none;
+footer {
+    background-color: #2a785e;
+    padding: 40px 0;
+    margin-top: 50px;
 }
 
-footer a:hover {
+.accueil {
+    text-align: center;
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+
+.accueil:hover {
     text-decoration: underline;
 }

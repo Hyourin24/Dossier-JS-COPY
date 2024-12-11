@@ -15,16 +15,16 @@ async function AfficherPost() {
             postDiv.classList.add("postInfo");
             userSection1.appendChild(postDiv);
             //Création des titres
-            let postTitre = document.createElement("p")
+            let postTitre = document.createElement("h3")
             postTitre.classList.add("postTitre")
             postTitre.textContent = `Titre: ${post.title}`
             postDiv.appendChild(postTitre)
             //Création des body 
 
             let user = users.find(user => user.id === post.userId);
-
-            let postBody = document.createElement("a")
-            postBody.href = "./page3.html"
+            
+            let postBody = document.createElement("p")
+            postBody.href = "./page3.html";
             postBody.classList.add("postBody")
             postBody.textContent = `Contenu: ${post.body}`
             postDiv.appendChild(postBody)
@@ -33,21 +33,41 @@ async function AfficherPost() {
             
 
             //Création des noms
-            let postName = document.createElement("a");
+            let postName = document.createElement("p");
             postName.href = `https://jsonplaceholder.typicode.com/users/${user.id}`
             postName.classList.add("postName");
             postName.textContent = `Nom de l'utilisateur: ${user.name}`;
             postDiv.appendChild(postName);
-            
 
-            postBody.addEventListener("click", () => {
-                localStorage.setItem("selectedPostId", post.Id);
-            });
+            //Création des liens vers la page 2 et 3
+            let link = document.createElement("div")
+            link.classList.add("link")
+            postDiv.appendChild(link)
+
+            let postNameLink = document.createElement("a")
+            postNameLink.href = `https://jsonplaceholder.typicode.com/users/${user.id}`
+            postNameLink.classList.add("postNameLink")
+            postNameLink.textContent = "Informations de l'utilisateur"
+            link.appendChild(postNameLink)
+
+            let postBodyLink = document.createElement("a")
+            postBodyLink.href = `./page3.html`;
+            postBodyLink.classList.add("postBodyLink");
+            postBodyLink.textContent = "Informations du post"
+            link.appendChild(postBodyLink)
+
+            console.log("Post ID :", post.id, "Titre :", post.title);
             // Ajout d'un bouton/lien pour afficher uniquement ce postDiv
+
+            postBodyLink.addEventListener("click", () => {
+                
+                localStorage.setItem("selectedPostId", post.id);
+                console.log("ID sauvegardé dans localStorage :", post.id); 
+            });
         });
 
-         
-    } catch (error) {
+        
+        } catch (error) {
         console.error(error);
     }
 }
