@@ -4,7 +4,7 @@ let postSection = document.querySelector(".postSection");
 async function AfficherPostsUtilisateur() {
     try {
         // Récupérer l'ID du post sélectionné
-        const selectedPostId = parseInt(localStorage.getItem("selectedPostId"), 10);
+        const selectedPostId = (localStorage.getItem("selectedPostId"));
         console.log("ID récupéré :", selectedPostId); 
 
         // Fetch des données API
