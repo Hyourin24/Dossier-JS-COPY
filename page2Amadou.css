@@ -26,7 +26,7 @@ header {
 
 h1 {
     text-align: left;
-    margin-left: 40px;
+    margin-left: 50px;
     font-size: 25px;
     color: white;
     display: inline-flex;
@@ -98,8 +98,8 @@ footer {
 
 .searchConnexion p {
     text-align: end;
-    margin-bottom: 12px;
-    margin-right: 50px;
+    margin-bottom: 8px;
+    margin-right: 55px;
 }
 
 
