@@ -51,7 +51,7 @@ async function AfficherPost() {
             link.appendChild(postNameLink)
 
             let postBodyLink = document.createElement("a")
-            postBodyLink.href = `./page3.html`;
+            postBodyLink.href = `page3/page3.html`;
             postBodyLink.classList.add("postBodyLink");
             postBodyLink.textContent = "Informations du post"
             link.appendChild(postBodyLink)
@@ -59,7 +59,7 @@ async function AfficherPost() {
             console.log("Post ID :", post.id, "Titre :", post.title);
             // Ajout d'un bouton/lien pour afficher uniquement ce postDiv
 
-            postBody.addEventListener("click", () => {
+            postBodyLink.addEventListener("click", () => {
                 console.log("ID sauvegardé dans localStorage :", post.id);
                 localStorage.setItem("selectedPostId", post.id); // L'ID sera stocké comme une chaîne
             });
