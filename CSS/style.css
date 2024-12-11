@@ -1,9 +1,4 @@
 
-@font-face {
-    font-family: 'constantia';
-    src: url(fonts\constantia\constan.ttf);
-}
-
 * {
     margin: 0;
 }
@@ -22,7 +17,7 @@ header {
     margin-right: 40px;
     border-radius: 30px;
     float: right;
-    font-family: 'constantia';
+
 }
 
 p {
@@ -88,7 +83,7 @@ h1 {
     color: white;
     display: inline-flex;
     float: left;
-    font-family: 'constantia';
+    
 }
 
 .userSection3 { 

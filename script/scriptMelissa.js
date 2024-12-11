@@ -1,5 +1,5 @@
 
-//let main = document.querySelector(".main");
+
 export let userSection3 = document.querySelector(".userSection3")
 async function AfficherPost() {
     try {
@@ -13,32 +13,32 @@ async function AfficherPost() {
         let comments = await responseComments.json();
 
         posts.forEach(post => {
-            let postDiv = document.createElement("div");
-            postDiv.classList.add("postInfo");
-            postDiv.textContent = `Titre: ${post.title}, Contenu: ${post.body}`;
-            userSection3.appendChild(postDiv);
 
+            let postDiv = document.createElement("div")
+            postDiv.classList.add("postInfo")
+
+            // Titre
+            let postTitre = document.createElement("h3")
+            postTitre.textContent = `Titre: ${post.title}`
+            postDiv.appendChild(postTitre);
+
+            // Nom de l'utilisateur
             let user = users.find(user => user.id === post.userId);
             let userInfoDiv = document.createElement("div");
             userInfoDiv.classList.add("userInfo");
             userInfoDiv.textContent = `Nom de l'utilisateur: ${user.name}`;
             postDiv.appendChild(userInfoDiv);
 
+            userSection3.appendChild(postDiv)
+
+            // Ajouter les commentaires du post
             let postComments = comments.filter(comment => comment.postId === post.id);
-
-
-
             postComments.forEach(comment => {
-
-
                 let commentsDiv = document.createElement("div");
                 commentsDiv.classList.add("commentsDiv");
-                commentsDiv.textContent = `Commentaire: ${comment.body}`;
+                commentsDiv.textContent = `Commentaire: ${comment.body}`
                 postDiv.appendChild(commentsDiv);
-
-
             });
-
             let deleteButton = document.createElement("button");
             deleteButton.classList.add("monBouton");
             postDiv.appendChild(deleteButton);
