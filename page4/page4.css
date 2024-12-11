@@ -178,5 +178,14 @@ form button:hover {
 }
 
 
+nav{
+    padding: 15px;
+}
+.link{
+    text-decoration: none;
+    color: #fff;
+}
+
+
 
 
