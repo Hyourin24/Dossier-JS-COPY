@@ -1,0 +1,182 @@
+header, footer {
+    background: linear-gradient(0deg, rgba(42,120,94,1)0%, rgba(1,54, 44,1) 60%);
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+
+html, body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333; 
+    background-color: #f5f5f5;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Main content */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Form container */
+form {
+    background: linear-gradient(45deg, #01362c 40%, #2a785e 50%, #45a049 10%);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(1, 54, 44, 0.2);
+    width: 100%;
+    /* max-width: 400px; */
+}
+
+
+
+/* Form labels and inputs */
+form label {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    color: #fff;
+    align-items: center;
+}
+
+form input, form textarea, form button {
+    font-size: 1rem;
+    width: 95%;
+    margin-bottom: 0.2rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Textarea */
+form textarea {
+    resize: horizontal;
+    min-height: 100px;
+}
+
+/* Buttons */
+form button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+
+.error{
+    color: red !important;
+}
+
+#feedback {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: green;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    form input, form textarea, form button {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+
+    footer {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.75rem;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    form {
+        box-shadow: none;
+        padding: 1rem;
+    }
+
+    form input, form textarea, form button {
+        font-size: 0.8rem;
+    }
+
+    footer {
+        padding: 0.5rem;
+    }
+}
+
+
+.logged-post {
+    border: 1px solid #01362c;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.logged-post p {
+    margin: 5px 0;
+}
+
+.delete-btn {
+    background-color:#01362c;
+    
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.delete-btn:hover {
+    background-color: #2a785e;
+}
+
+
+.post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    position: relative;
+}
+
+/* length, thickness, color and space between line and text */
+.post::before,
+.post::after {
+    content: "";
+    width: 100px; 
+    height: 3px; 
+    background: #fff; 
+    margin: 0 15px;
+}
+
+
+
+
