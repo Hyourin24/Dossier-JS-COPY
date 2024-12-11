@@ -4,7 +4,7 @@ let postSection = document.querySelector(".postSection");
 async function AfficherPostsUtilisateur() {
     try {
         // Récupérer l'ID du post sélectionné
-        const selectedPostId = localStorage.getItem("selectedPostId");
+        const selectedPostId = parseInt(localStorage.getItem("selectedPostId"), 10);
         console.log("ID récupéré :", selectedPostId); 
 
         // Fetch des données API
@@ -19,14 +19,20 @@ async function AfficherPostsUtilisateur() {
 
         // Trouver le post correspondant à l'ID
         const post = posts.find(post => post.id === selectedPostId);
-        if (!post) {
-            console.error("Erreur : Aucun post trouvé pour cet ID !");
-            return;
-        }
 
         // Création de l'interface pour le post
         let postDiv = document.createElement("div");
-        postDiv.classList.add("postInfo");
+        postDiv.classList.add("postDiv");
+
+        //Création d'un bouton retour
+        let backLink = document.createElement("a");
+        backLink.href = `./index.html`
+        backLink.classList.add("backLink");
+        postDiv.appendChild(backLink);
+
+        let backArrow = document.createElement("i");
+        backArrow.classList.add('fa-solid', 'fa-arrow-left');
+        backLink.appendChild(backArrow);
 
         // Titre
         let postTitre = document.createElement("h3");
@@ -39,6 +45,8 @@ async function AfficherPostsUtilisateur() {
         postName.classList.add("postName");
         postName.textContent = `Nom de l'utilisateur: ${user.name}`;
         postDiv.appendChild(postName);
+
+
 
         // Ajout des commentaires liés au post
         let postComments = comments.filter(comment => comment.postId === post.id);
@@ -59,7 +67,6 @@ async function AfficherPostsUtilisateur() {
                     { method: 'DELETE' })
                     .then(() => postDiv.remove(deleteButton));
             });
-
 
         // Ajout du post au DOM
         postSection.appendChild(postDiv);
