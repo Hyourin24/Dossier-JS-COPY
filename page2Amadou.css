@@ -71,7 +71,8 @@ p {
 }
 
 p:hover {
-    background-color: cadetblue;
+    background: linear-gradient(0deg, rgba(42, 120, 94, 1) 0%, rgba(1, 54, 44, 1) 60%);
+    color: #ffffff;
 }
 
 
