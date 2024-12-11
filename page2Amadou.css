@@ -26,7 +26,7 @@ header {
 
 h1 {
     text-align: left;
-    margin-left: 50px;
+    margin-left: 40px;
     font-size: 25px;
     color: white;
     display: inline-flex;
@@ -59,6 +59,11 @@ h2 {
 
 }
 
+h2:hover{
+    color: (0deg, rgba(42, 120, 94, 1) 0%, rgba(1, 54, 44, 1) 60%);
+    font-size: larger;
+}
+
 
 p {
     margin-left: 100px;
@@ -71,13 +76,12 @@ p {
 }
 
 p:hover {
-    background-color: cadetblue;
-}
-
-
-hr {
-    color: darkgreen;
-    display: none;
+    background: linear-gradient(0deg, rgba(42, 120, 94, 1) 0%, rgba(1, 54, 44, 1) 60%);
+    text-shadow:5px;
+    color: aliceblue;
+    font-size: 20px;
+    box-shadow: 6px 22px 12px rgba(66,98,122,0.87);
+   font-weight: bold;
 }
 
 
@@ -99,7 +103,7 @@ footer {
 .searchConnexion p {
     text-align: end;
     margin-bottom: 8px;
-    margin-right: 55px;
+    margin-right: 50px;
 }
 
 
