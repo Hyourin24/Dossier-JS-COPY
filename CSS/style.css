@@ -105,7 +105,7 @@ h2 {
     min-height: 100vh;
 }
 
-.postInfo {
+.postDiv {
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 50px;
@@ -119,10 +119,19 @@ h2 {
 
 .postTitre,
 .postBody,
-.postName {
+.postName,
+.commentsDiv {
     margin-bottom: 20px;
     text-decoration: none;
     color: black;
+}
+
+.backLink i {
+    background-color: rgba(42, 120, 94, 1);
+    padding: 10;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    color: aliceblue;
 }
 
 
@@ -164,7 +173,6 @@ footer {
     padding: 40px 0;
     margin-top: 50px;
 }
-
 .accueil {
     text-align: center;
     color: white;

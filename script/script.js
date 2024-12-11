@@ -12,7 +12,7 @@ async function AfficherPost() {
         posts.forEach(post => {
             //Création des divs
             let postDiv = document.createElement("div");
-            postDiv.classList.add("postInfo");
+            postDiv.classList.add("postDiv");
             userSection1.appendChild(postDiv);
             //Création des titres
             let postTitre = document.createElement("h3")
@@ -59,10 +59,9 @@ async function AfficherPost() {
             console.log("Post ID :", post.id, "Titre :", post.title);
             // Ajout d'un bouton/lien pour afficher uniquement ce postDiv
 
-            postBodyLink.addEventListener("click", () => {
-                
-                localStorage.setItem("selectedPostId", post.id);
-                console.log("ID sauvegardé dans localStorage :", post.id); 
+            postBody.addEventListener("click", () => {
+                console.log("ID sauvegardé dans localStorage :", post.id);
+                localStorage.setItem("selectedPostId", post.id); // L'ID sera stocké comme une chaîne
             });
         });
 
