@@ -25,7 +25,7 @@ async function AfficherPostsUtilisateur() {
 
         //Création d'un bouton retour
         let backLink = document.createElement("a")
-        backLink.href = `./index.html`
+        backLink.href = "index.html"
         backLink.classList.add("backLink")
         postDiv.appendChild(backLink)
         

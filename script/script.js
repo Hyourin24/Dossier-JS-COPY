@@ -51,7 +51,7 @@ async function AfficherPost() {
             link.appendChild(postNameLink)
 
             let postBodyLink = document.createElement("a")
-            postBodyLink.href = `./page3.html`;
+            postBodyLink.href = `page3/page3.html`;
             postBodyLink.classList.add("postBodyLink");
             postBodyLink.textContent = "Informations du post"
             link.appendChild(postBodyLink)
