@@ -5,6 +5,7 @@ async function AfficherPostsUtilisateur() {
     try {
         // Récupérer l'ID du post sélectionné
         const selectedPostId = localStorage.getItem("selectedPostId");
+        console.log(selectedPostId)
 
         // Fetch des données API
         let responsePosts = await fetch('https://jsonplaceholder.typicode.com/posts');

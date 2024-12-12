@@ -5,49 +5,34 @@ async function AfficherArticles() {
     let articles = await responseArticles.json();
 
     // Récupérer l'ID de l'utilisateur depuis le localStorage
-    const userId = localStorage.getItem("selectedPostName")
-    console.log("ID utilisateur récupéré :", userId);
+    const userId = localStorage.getItem("selectedPostName");
 
     // Filtrer les posts correspondant à cet utilisateur
     const userPosts = articles.filter(post => post.userId == userId);
-
-
-    console.log("Articles de l'utilisateur :", userPosts);
 
     // Sélectionner le conteneur principal
     const container = document.querySelector(".userSection2");
 
     // Ajouter les posts au conteneur
     userPosts.forEach(post => {
-      let postDiv = document.createElement("div"); // Conteneur pour un post
+      let postDiv = document.createElement("div"); 
       postDiv.classList.add("postDiv");
 
       let postsTitre = document.createElement("h3");
-      postsTitre.classList.add("postTitre")
+      postsTitre.classList.add("postTitre");
       postsTitre.textContent = `Titre: ${post.title}`;
 
       let postBody = document.createElement("p");
-      postBody.classList.add("postBody")
+      postBody.classList.add("postBody");
       postBody.textContent = `Contenu: ${post.body}`;
 
       postDiv.appendChild(postsTitre);
       postDiv.appendChild(postBody);
 
-      container.appendChild(postDiv); // Ajouter le post au conteneur principal
+      container.appendChild(postDiv); 
 
       //Ajout de lien vers la page 3
-
-      let link = document.createElement("div")
-      link.classList.add("link")
-      postDiv.appendChild(link)
-
-      let postBodyLink = document.createElement("a")
-      postBodyLink.href = `../page3/page3.html`;
-      postBodyLink.classList.add("postBodyLink");
-      postBodyLink.textContent = "Informations du post"
-      link.appendChild(postBodyLink)
-    });
-
+    })
   } catch (error) {
     console.error("Erreur lors de la récupération des articles :", error);
   }

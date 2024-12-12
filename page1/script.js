@@ -21,7 +21,7 @@ async function AfficherPost() {
             postDiv.appendChild(postTitre)
             //Création des body 
 
-            let user = users.find(user => user.id === post.userId);
+            let user = users.find(user => user.id == post.userId);
             
             let postBody = document.createElement("p")
             postBody.classList.add("postBody")
@@ -58,7 +58,7 @@ async function AfficherPost() {
             console.log("Post ID :", post.id, "Titre :", post.title);
             // Ajout d'un bouton/lien pour afficher uniquement ce postDiv
 
-            postBody.addEventListener("click", () => {
+            postBodyLink.addEventListener("click", () => {
                 console.log("ID sauvegardé dans localStorage :", post.id);
                 localStorage.setItem("selectedPostId", post.id); // L'ID sera stocké comme une chaîne
             });
