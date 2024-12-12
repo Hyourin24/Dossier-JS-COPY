@@ -1,30 +1,45 @@
-// ID de l'utilisateur spécifique
-const userId = 1; // Change l'ID pour tester avec un autre utilisateur
+async function AfficherArticles() {
+  try {
+    // Récupérer les articles via l'API
+    let responseArticles = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let articles = await responseArticles.json();
 
-fetch("https://jsonplaceholder.typicode.com/posts?")
-  .then((response) => response.json())
-  .then((posts) => {
-    // Filtrer les posts
-    const userPosts = posts.filter((post) => post.userId === userId);
+    // Récupérer l'ID de l'utilisateur depuis le localStorage
+    const userId = localStorage.getItem("selectedPostName")
+    console.log("ID utilisateur récupéré :", userId);
 
-    // Sélectionner le conteneur
-    const container = document.getElementById("thePosts");
+    // Filtrer les posts correspondant à cet utilisateur
+    const userPosts = articles.filter(post => post.userId == userId);
+
+
+    console.log("Articles de l'utilisateur :", userPosts);
+
+    // Sélectionner le conteneur principal
+    const container = document.querySelector(".userSection2");
 
     // Ajouter les posts au conteneur
-    userPosts.forEach((post) => {
+    userPosts.forEach(post => {
       let postDiv = document.createElement("div"); // Conteneur pour un post
-      let postsTitle = document.createElement("h3");
-      let userIdPosts = document.createElement("p");
+      postDiv.classList.add("postDiv");
 
-      postsTitle.textContent = post.title;
-      userIdPosts.textContent = post.body;
+      let postsTitre = document.createElement("h3");
+      postsTitre.classList.add("postTitre")
+      postsTitre.textContent = `Titre: ${post.title}`;
 
-      postDiv.appendChild(postsTitle);
-      postDiv.appendChild(userIdPosts);
+      let postBody = document.createElement("p");
+      postBody.classList.add("postBody")
+      postBody.textContent = `Contenu: ${post.body}`;
 
-      let body = document.querySelector("body");
-      body.appendChild(postDiv);
+      postDiv.appendChild(postsTitre);
+      postDiv.appendChild(postBody);
 
       container.appendChild(postDiv); // Ajouter le post au conteneur principal
     });
-  });
+
+  } catch (error) {
+    console.error("Erreur lors de la récupération des articles :", error);
+  }
+}
+
+// Appeler la fonction
+AfficherArticles();

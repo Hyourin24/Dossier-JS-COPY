@@ -24,7 +24,6 @@ async function AfficherPost() {
             let user = users.find(user => user.id === post.userId);
             
             let postBody = document.createElement("p")
-            postBody.href = "./page3.html";
             postBody.classList.add("postBody")
             postBody.textContent = `Contenu: ${post.body}`
             postDiv.appendChild(postBody)
@@ -45,13 +44,13 @@ async function AfficherPost() {
             postDiv.appendChild(link)
 
             let postNameLink = document.createElement("a")
-            postNameLink.href = `https://jsonplaceholder.typicode.com/users/${user.id}`
+            postNameLink.href = `../page2/page2.html`
             postNameLink.classList.add("postNameLink")
             postNameLink.textContent = "Informations de l'utilisateur"
             link.appendChild(postNameLink)
 
             let postBodyLink = document.createElement("a")
-            postBodyLink.href = `page3/page3.html`;
+            postBodyLink.href = `../page3/page3.html`;
             postBodyLink.classList.add("postBodyLink");
             postBodyLink.textContent = "Informations du post"
             link.appendChild(postBodyLink)
@@ -63,6 +62,10 @@ async function AfficherPost() {
                 console.log("ID sauvegardé dans localStorage :", post.id);
                 localStorage.setItem("selectedPostId", post.id); // L'ID sera stocké comme une chaîne
             });
+            postNameLink.addEventListener("click", () => {
+                console.log("ID nom local storage:",  post.userId)
+                localStorage.setItem("selectedPostName", post.userId)
+            })
         });
 
         

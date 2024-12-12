@@ -100,7 +100,9 @@ h2 {
     display: grid;
     grid-template-columns: 50% 50%;
 }
-
+.userSection2 {
+    min-height: 100vh;
+}
 .userSection3 {
     min-height: 100vh;
 }
@@ -115,6 +117,9 @@ h2 {
     grid-row: 30% 30% 30%;
     max-width: 100%;
 
+}
+.postDiv:hover {
+    background-color: rgba(90, 178, 149, 0.338);
 }
 
 .postTitre,
