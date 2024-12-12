@@ -191,3 +191,20 @@ footer {
 .accueil:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 900px) {
+    header {
+        display: block;
+    }
+    .searchBar{
+        width: 100%;
+        border-radius: 0px;
+        display: none;
+    }
+    .searchBar i {
+        display: none;
+    }
+    .userSection1 {
+        display: block;
+    }
+}
