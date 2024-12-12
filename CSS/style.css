@@ -116,10 +116,11 @@ h2 {
     display: grid;
     grid-row: 30% 30% 30%;
     max-width: 100%;
-
+    transition: 0.3s;
 }
 .postDiv:hover {
     background-color: rgba(90, 178, 149, 0.338);
+    transform: scale(1.02);
 }
 
 .postTitre,

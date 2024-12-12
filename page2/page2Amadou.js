@@ -34,6 +34,18 @@ async function AfficherArticles() {
       postDiv.appendChild(postBody);
 
       container.appendChild(postDiv); // Ajouter le post au conteneur principal
+
+      //Ajout de lien vers la page 3
+
+      let link = document.createElement("div")
+      link.classList.add("link")
+      postDiv.appendChild(link)
+
+      let postBodyLink = document.createElement("a")
+      postBodyLink.href = `../page3/page3.html`;
+      postBodyLink.classList.add("postBodyLink");
+      postBodyLink.textContent = "Informations du post"
+      link.appendChild(postBodyLink)
     });
 
   } catch (error) {
