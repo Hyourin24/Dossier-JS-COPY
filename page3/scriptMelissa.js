@@ -1,11 +1,8 @@
-let userSection3 = document.querySelector(".userSection3")
-let postSection = document.querySelector(".postSection");
-
 async function AfficherPostsUtilisateur() {
     try {
         // Récupérer l'ID du post sélectionné
         const selectedPostId = localStorage.getItem("selectedPostId");
-        console.log(selectedPostId)
+        console.log(selectedPostId);
 
         // Fetch des données API
         let responsePosts = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -16,6 +13,10 @@ async function AfficherPostsUtilisateur() {
 
         let responseComments = await fetch('https://jsonplaceholder.typicode.com/comments');
         let comments = await responseComments.json();
+        
+        //Sélection de l'élément du DOM
+        let userSection3 = document.querySelector(".userSection3");
+        
 
         // Trouver le post correspondant à l'ID
         const post = posts.find(post => post.id == selectedPostId);
@@ -25,14 +26,14 @@ async function AfficherPostsUtilisateur() {
         postDiv.classList.add("postDiv");
 
         //Création d'un bouton retour
-        let backLink = document.createElement("a")
+        let backLink = document.createElement("a");
         backLink.href = "../page1/index.html";
-        backLink.classList.add("backLink")
-        postDiv.appendChild(backLink)
+        backLink.classList.add("backLink");
+        postDiv.appendChild(backLink);
         
-        let backArrow = document.createElement("i")
+        let backArrow = document.createElement("i");
         backArrow.classList.add('fa-solid', 'fa-arrow-left');
-        backLink.appendChild(backArrow)
+        backLink.appendChild(backArrow);
 
         // Titre
         let postTitre = document.createElement("h3");
@@ -56,11 +57,12 @@ async function AfficherPostsUtilisateur() {
             commentsDiv.textContent = `Commentaire: ${comment.body}`;
             postDiv.appendChild(commentsDiv);
         });
-
+        
+        //Création d'un bouton delete bouton renvoyant à l'API avec la method DELETE
         let deleteButton = document.createElement("button");
             deleteButton.classList.add("monBouton");
             postDiv.appendChild(deleteButton);
-            deleteButton.textContent = "Supprimer"
+            deleteButton.textContent = "Supprimer";
             deleteButton.addEventListener("click", () => {
                 document.querySelector('#delete-request .status');
                 fetch('https://jsonplaceholder.typicode.com/comments',
@@ -69,7 +71,7 @@ async function AfficherPostsUtilisateur() {
             });
 
         // Ajout du post au DOM
-        postSection.appendChild(postDiv);
+        userSection3.appendChild(postDiv);
 
     } catch (error) {
         console.error(error);
